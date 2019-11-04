@@ -1,0 +1,66 @@
+<ScrollView>
+    
+  <GridLayout rows="auto,auto,auto,*"  columns="">
+    <GridLayout row="0" rows="auto,auto" columns="" class="primaryBg">
+  <SearchBar [marginRight]="pageSide/2" [marginLeft]="pageSide/2" [marginTop]="pageSide"row="0" class="whiteBg"  hint="Search"  ></SearchBar>
+  <GridLayout row="1"  columns="*,*,*"   [marginLeft]="pageSide" [marginBottom]="pageSide" [marginRight]="pageSide" [marginTop]="pageSide">
+    
+    <Label col="0" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="All" class="whiteBg "  ></Label>
+    <Label col="1" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Clothing" class="whiteBg"  ></Label>
+    <Label col="2" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Jewelery" class="whiteBg"  ></Label>
+    
+  </GridLayout>     
+</GridLayout>
+<GridLayout row="1" class="mutedbg" rows="auto,*" columns="">
+  
+  
+  <GridLayout columns="*,*,*"   row="0" [margin]="pageSide/2">
+    
+    <Label col="0" class="border fontw500 font16 whiteColor primaryBg " style="text-align: center; padding-top: 5%;"   [height]="pageSide"   text="New"   ></Label>
+    <Label col="1" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;"  [height]="pageSide"  text="Popular"   ></Label>
+    <Label col="2" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;"  [height]="pageSide"   text="Price"   ></Label>
+    
+  </GridLayout>     
+  
+ 
+
+  <RadListView   row="1" items="['a','a','a']" class="radViewList">
+    <ng-template tkListItemTemplate let-item="item"  >
+      <GridLayout  rows="*" columns="*,*" (tap)="shop()" >
+        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0" [marginLeft]="pageSide/8" class="bordermuted" col="0">
+          <GridLayout   col="0" colSpan="2" class="whiteBg" row="0"  >
+            <Image src="https://cjay.nl/storage/products/cr1201-480-942395.jpeg"></Image>
+          </GridLayout>
+          <Label colSpan="2" col="0" row="1" text="Harry Potter gryffindor gewaad" class="primaryColor fontw500 font16" [marginLeft]="pageSide/4" textWrap="true" ></Label>
+          
+          <Label col="0" row="3" text="Rs74.96" class="fontw700 font16 " [marginLeft]="pageSide/4"></Label>
+          <Label col="0" row="4" text="Rs62.95" class="fontw700 font20 primaryColor" [marginLeft]="pageSide/4"></Label>
+          <Label row="2" col="1" text="4.9"  class="fontw500 font16" horizontalAlignment="right" [marginRight]="pageSide/4"></Label>
+          <Label row="3" col="1" text="New item" [marginRight]="pageSide/4"></Label>
+          <Label row="4" col="1" text="Discount" [marginRight]="pageSide/4"></Label>  
+          
+        </GridLayout>
+        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0" [marginLeft]="pageSide/8" [marginRight]="pageSide/8" class="bordermuted" col="1">
+          <GridLayout  col="0" colSpan="2" class="whiteBg" row="0"  >
+            <Image src="https://www.heroictales.nl/media/catalog/product/cache/4cb5df7f8a741fedf558cb1f9d5f3c22/h/u/huffelpuf_pantoffels_hufflepuff_1.jpg"></Image>
+          </GridLayout>
+          <Label colSpan="2" col="0" row="1" text="Harry Potter hufflepuff pantofells " class="primaryColor fontw500 font16" [marginLeft]="pageSide/4" textWrap="true" ></Label>
+          <Label col="0" row="3" text="Rs10.95" class="fontw700 font16 " [marginLeft]="pageSide/4"></Label>
+          <Label col="0" row="4" text="Rs17.06" class="fontw700 font20 primaryColor" [marginLeft]="pageSide/4"></Label>
+          <Label row="2" col="1" text="4.9"  class="fontw500 font16" horizontalAlignment="right" [marginRight]="pageSide/4"></Label>
+          <Label row="3" col="1" text="New item" [marginRight]="pageSide/4"></Label>
+          <Label row="4" col="1" text="Discount" [marginRight]="pageSide/4"></Label>  
+          
+        </GridLayout> 
+      </GridLayout>   
+    </ng-template>
+    <ng-template tkListViewFooter>
+      <GridLayout class="p-b-150"></GridLayout>
+    </ng-template>
+  </RadListView>    
+  </GridLayout>   
+  
+  
+</GridLayout>
+</ScrollView>
+
