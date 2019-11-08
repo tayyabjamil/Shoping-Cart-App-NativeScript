@@ -1,13 +1,18 @@
+<ActionBar  class="primaryBg">
+  <Label text="<" horizontalAlignment="left" class="font20 whiteColor" textWrap="true"></Label>
+  
+  </ActionBar>
+  
 <ScrollView>
     
   <GridLayout rows="auto,auto,auto,*"  columns="">
     <GridLayout row="0" rows="auto,auto" columns="" class="primaryBg">
   <SearchBar [marginRight]="pageSide/2" [marginLeft]="pageSide/2" [marginTop]="pageSide"row="0" class="whiteBg"  hint="Search"  ></SearchBar>
-  <GridLayout row="1"  columns="*,*,*"   [marginLeft]="pageSide" [marginBottom]="pageSide" [marginRight]="pageSide" [marginTop]="pageSide">
+  <GridLayout row="1"  columns="*,*,*"   [marginLeft]="pageSide/2" [marginBottom]="pageSide/2" [marginRight]="pageSide" [marginTop]="pageSide/2">
     
-    <Label col="0" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="All" class="whiteBg "  ></Label>
-    <Label col="1" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Clothing" class="whiteBg"  ></Label>
-    <Label col="2" style="border-radius: 20%;text-align: center; padding-top: 5%;"  [width]="pageSide*2" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Jewelery" class="whiteBg"  ></Label>
+    <Label col="0" style="border-radius: 20%;text-align: center; padding-top: 10%;"  [width]="boxSize/4" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="All" class="whiteBg font16"  ></Label>
+    <Label col="1" style="border-radius: 20%;text-align: center; padding-top: 10%;"  [width]="boxSize/4" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Clothing" class="whiteBg font16"  ></Label>
+    <Label col="2" style="border-radius: 20%;text-align: center; padding-top: 10%;"  [width]="boxSize/4" [height]="pageSide" [marginLeft]="pageSide/2" [marginRight]="pageSide/2" text="Jewelery" class="whiteBg font16 "  ></Label>
     
   </GridLayout>     
 </GridLayout>
@@ -16,18 +21,18 @@
   
   <GridLayout columns="*,*,*"   row="0" [margin]="pageSide/2">
     
-    <Label col="0" class="border fontw500 font16 whiteColor primaryBg " style="text-align: center; padding-top: 5%;"   [height]="pageSide"   text="New"   ></Label>
-    <Label col="1" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;"  [height]="pageSide"  text="Popular"   ></Label>
-    <Label col="2" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;"  [height]="pageSide"   text="Price"   ></Label>
+    <Label col="0" class="border fontw500 font16 whiteColor primaryBg " style="text-align: center; padding-top: 5%;margin-right: 1dp;"   [height]="pageSide"   text="New"   ></Label>
+    <Label col="1" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;margin-right: 1dp"  [height]="pageSide"  text="Popular"   ></Label>
+    <Label col="2" class="border fontw500 font16 primaryColor " style="text-align: center; padding-top: 5%;margin-right: 1dp"  [height]="pageSide"   text="Price"   ></Label>
     
-  </GridLayout>     
+  </GridLayout>        
   
  
 
-  <RadListView   row="1" items="['a','a','a']" class="radViewList">
+  <RadListView  [marginBottom]="pageSide/8" row="1" items="['a','a','a']" class="radViewList">
     <ng-template tkListItemTemplate let-item="item"  >
       <GridLayout  rows="*" columns="*,*" (tap)="shop()" >
-        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0" [marginLeft]="pageSide/8" class="bordermuted" col="0">
+        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0"  [marginBottom]="pageSide/8" [marginLeft]="pageSide/8" class="bordermuted" col="0">
           <GridLayout   col="0" colSpan="2" class="whiteBg" row="0"  >
             <Image src="https://cjay.nl/storage/products/cr1201-480-942395.jpeg"></Image>
           </GridLayout>
@@ -39,8 +44,8 @@
           <Label row="3" col="1" text="New item" [marginRight]="pageSide/4"></Label>
           <Label row="4" col="1" text="Discount" [marginRight]="pageSide/4"></Label>  
           
-        </GridLayout>
-        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0" [marginLeft]="pageSide/8" [marginRight]="pageSide/8" class="bordermuted" col="1">
+        </GridLayout>  
+        <GridLayout columns="*,auto" rows="*,auto,auto,auto,auto" [height]="pageSide*7" row="0" [marginLeft]="pageSide/8" [marginBottom]="pageSide/8" [marginRight]="pageSide/8" class="bordermuted" col="1">
           <GridLayout  col="0" colSpan="2" class="whiteBg" row="0"  >
             <Image src="https://www.heroictales.nl/media/catalog/product/cache/4cb5df7f8a741fedf558cb1f9d5f3c22/h/u/huffelpuf_pantoffels_hufflepuff_1.jpg"></Image>
           </GridLayout>

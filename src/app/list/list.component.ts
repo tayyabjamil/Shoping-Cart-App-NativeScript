@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     this.iconSize = deviceWidth * 0.15;
-    // this.page.actionBarHidden = true;
+     this.page.actionBarHidden = true;
     this.boxSize = deviceWidth * 0.90;
     
   }

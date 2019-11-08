@@ -1,13 +1,38 @@
-<ScrollView>
-  <GridLayout rows="auto,*,auto">
-    <GridLayout >
-        <Label text="slider" textWrap="true"></Label>
+<ActionBar class="primaryBg">
+  <Label text="<" horizontalAlignment="left" class="font20 whiteColor" textWrap="true"></Label>
+
+</ActionBar>
+     <GridLayout rows="auto,*" columns="">
+       <Label text="slider" [marginBottom]="pageSide/4" [marginTop]="pageSide/4" textWrap="true"></Label>
+         
+       <Pager row="1"  [selectedIndex]="latestRecievedIndex" (selectedIndexChange)="onIndexChanged($event)" [items]="onBoardingitems"
+       [itemTemplateSelector]="templateSelector" 
+       disableAnimation="false">
+       <ng-template pagerTemplateKey="Personalinfo" let-i="index" let-item="item">
+         
+         <GridLayout  rows="auto,auto,*,auto" [marginRight]="pageSide/2" [marginLeft]="pageSide/2">
+          <Label row="1" text="CheckOut" [marginBottom]="pageSide/4" class="font20 fontw700 mutedDark"
+          textWrap="true"></Label>
+          <StackLayout row="2">
+            <ns-inputControlSelector [generateForm]="formData"></ns-inputControlSelector>
+          </StackLayout>
+          <GridLayout row="3">
+            <Label horizontalAlignment="right" (tap)="Summary()" class="primaryBg whiteColor radius5"
+            style="text-align: center;padding-top: 15;" [height]="boxSize/6" [width]="boxSize*2/4"
+            text="Next Step"></Label>
+          </GridLayout>
+        </GridLayout>
+      </ng-template>
+  <ng-template pagerTemplateKey="Acadmics" let-i="index" let-item="item">
+    <GridLayout style="background-color: bisque;" rows="*" columns="*">
+        
     </GridLayout>
-    <StackLayout row="1">   
-      <ns-inputControlSelector [generateForm]="formData"></ns-inputControlSelector>
-    </StackLayout>
-    <GridLayout row="2">
-        <Button text="Next Step"></Button>
-    </GridLayout>
-  </GridLayout>
-</ScrollView>   
+  </ng-template>
+  <ng-template pagerTemplateKey="Acadmic" let-i="index" let-item="item">
+      <GridLayout rows="*" columns="*"  style="background-color: blue;">
+      </GridLayout>
+    </ng-template>
+    
+  </Pager>
+  
+</GridLayout>

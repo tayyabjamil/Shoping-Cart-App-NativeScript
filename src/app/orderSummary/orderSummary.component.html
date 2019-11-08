@@ -1,3 +1,31 @@
-<p>
-  orderSummary works!
-</p>
+<ActionBar  class="primaryBg">
+<Label text="<" horizontalAlignment="left" class="font20 whiteColor" textWrap="true"></Label>
+    
+</ActionBar>
+<GridLayout rows="auto,auto,*" columns="" class="mutedBg">
+    <Label text="Order Summary" [marginBottom]="pageSide/2" [marginTop]="pageSide/2" [marginLeft]="pageSide/2" class="font20 fontw500 mutedDark" textWrap="true"></Label>
+    <Label row="1" text="" class="gradient" textWrap="true"></Label>
+    <RadListView   row="2" items="['a','a','a']" class="radViewList">
+      <ng-template tkListItemTemplate let-item="item"  >
+        <GridLayout  rows="auto,auto,auto,auto" class="mutedBg" columns="auto,*"  >
+          <GridLayout [paddingBottom]="pageSide/4" [paddingTop]="pageSide/4" row="0" rowSpan="3" >
+            <Image  [width]="boxSize/3" [height]="boxSize/4"  col="0" src="https://cjay.nl/storage/products/cr1201-480-942395.jpeg"></Image>
+                   
+          </GridLayout>
+           <Label col="1" row="0" [paddingTop]="pageSide/4" text="Harry Potter gryffindor gewaad" textWrap="true"></Label>
+           <Label col="1" row="1" text="Size:5" textWrap="true"></Label>
+          <StackLayout col="1" row="2" orientation="horizontal">
+            <Label  class="mutedColor font18" text="Rs 74.95" textWrap="true"></Label>
+            <Label   class="primaryColor font18 p-l-10 fontw700" text="Rs 62.95" textWrap="true"></Label>   
+          </StackLayout>
+          <Label row="3" colSpan="2" text="" class="muted" textWrap="true"></Label>
+           <Label text="x1" row="2" [marginRight]="pageSide/2" colSpan="2" horizontalAlignment="right" textWrap="true"></Label>
+           
+        </GridLayout>
+        </ng-template>
+      <ng-template tkListViewFooter>
+        <GridLayout class="p-b-150"></GridLayout>
+      </ng-template>
+    </RadListView>    
+    
+</GridLayout>  

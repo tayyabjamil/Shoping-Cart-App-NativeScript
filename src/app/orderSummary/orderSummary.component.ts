@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Page } from 'tns-core-modules/ui/page/page';
+import * as platformModule from 'tns-core-modules/platform';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'ns-orderSummary',
@@ -6,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orderSummary.component.css']
 })
 export class OrderSummaryComponent implements OnInit {
+  pageSide: number;
+  iconSize: number;
+  boxSize: number;
 
-  constructor() { }
+  constructor(   private page: Page,
+    private routerExtension: RouterExtensions,
+) { }
 
-  ngOnInit() {
+ngOnInit() {
+  
+  const deviceHeight: number = platformModule.screen.mainScreen.heightDIPs;
+    const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
+    this.pageSide = deviceWidth * 0.10;
+    this.iconSize = deviceWidth * 0.15;
+  
+    this.boxSize = deviceWidth * 0.90;
+   
   }
 
 }

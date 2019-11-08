@@ -1,7 +1,7 @@
 <ng-container *ngFor="let form of generateForm">
   <StackLayout>
     <!-- <ns-formTitle [text]="form.formTitle"></ns-formTitle> -->
-    <Label [text]="form.formTitle" textWrap="true"></Label>
+    <Label [text]="form.formTitle" class="font18 fontw500 mutedColor" textWrap="true"></Label>
 
     <ng-container *ngFor="let item of form.formFields">
       <ng-container *ngIf="checkType(item) == 'object'">

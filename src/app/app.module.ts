@@ -10,6 +10,7 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { ThemeModule } from "./theme/theme.module";
 import {ReactiveFormsModule} from '@angular/forms';
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { PagerModule } from "nativescript-pager/angular";
 
 @NgModule({
    bootstrap: [
@@ -21,7 +22,9 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
       NativeScriptUIListViewModule,
       ThemeModule,
       ReactiveFormsModule,
-      NativeScriptFormsModule
+      NativeScriptFormsModule,
+      PagerModule,
+
    ],
    declarations: [
       AppComponent,

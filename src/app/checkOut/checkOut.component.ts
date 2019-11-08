@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'tns-core-modules/ui/page/page';
 import * as platformModule from 'tns-core-modules/platform';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
@@ -15,9 +14,12 @@ export class CheckOutComponent implements OnInit {
   iconSize: number;
   boxSize: number;
   rform: FormGroup
+  currentPagerIndex = 0;
+  latestReceivedIndex = 0
+    
 
   formData = [
-    {
+    {  
       formTitle: 'Shipping information',
       formFields: [
         {
@@ -92,8 +94,8 @@ export class CheckOutComponent implements OnInit {
       ]
     },
   ]
+  pagerbox: number;
   constructor(
-    private page: Page,
     private routerExtension: RouterExtensions,
     private formBuilder: FormBuilder
   ) { }
@@ -103,9 +105,10 @@ export class CheckOutComponent implements OnInit {
     const deviceWidth: number = platformModule.screen.mainScreen.widthDIPs;
     this.pageSide = deviceWidth * 0.10;
     this.iconSize = deviceWidth * 0.15;
-
+    // this.pagerbox = deviceWidth * 1.0;
+  
     this.boxSize = deviceWidth * 0.90;
-
+   
     this.rform = this.formBuilder.group({
       firstName: new FormControl('', [Validators.required]),
       lastName: new FormControl('', [Validators.required]),
@@ -118,9 +121,48 @@ export class CheckOutComponent implements OnInit {
       telephone: new FormControl('', [Validators.required]),
     });
 
+      }
+      public Summary(){
+        this.routerExtension.navigate(["orderSummary"]);
 
-  }
-
+      }
+      onBoardingitems = [
+        {
+          title: 'Personal Information',
+          key: 'Personalinfo'
+        },
+        {
+          title: 'Acadmics Information',
+          key: 'Acadmics'
+        },
+        {
+        title: 'Acadmic Information',
+        key: 'Acadmic'
+      },
+      ];
+     onIndexChanged($event) {
+        this.latestReceivedIndex = $event.value;
+        this.currentPagerIndex = $event.value;
+      }
+    
+      public templateSelector = (item: any) => {
+        switch (item.key) {
+          case 'Personalinfo': {
+            return 'Personalinfo'
+          }
+            break;
+          case 'Acadmics': {
+            return 'Acadmics'
+          }
+            break;
+    
+            case 'Acadmic': {
+              return 'Acadmic'
+            }
+              break;
+      
+        }
+      }
 }
 
 

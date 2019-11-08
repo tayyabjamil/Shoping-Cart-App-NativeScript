@@ -34,6 +34,9 @@ color: #aeaeaf;;
 .radius10{
     border-radius: 10%;
 }
+.radius5{
+    border-radius: 5%;
+}
 
 .radiusTextField{
     border-radius: 7%;
@@ -50,7 +53,7 @@ color: #aeaeaf;;
     border-color: #70244f;
 }
 .border{
-    border-width: 1dp;
+    border-width: 1%;
     border-color: #70244f;
 
 }
